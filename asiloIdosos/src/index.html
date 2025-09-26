@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asilo de Mendigos de Pelotas - Cuidando com Amor e Dignidade</title>
+    <meta name="description" content="Há mais de um século, o Asilo de Mendigos de Pelotas oferece acolhimento, cuidado e dignidade para pessoas em situação de vulnerabilidade social.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i data-lucide="heart" class="logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>Asilo de Mendigos</h1>
+                        <p>Pelotas</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#sobre" class="nav-link">Sobre Nós</a>
+                    <a href="#historia" class="nav-link">Nossa História</a>
+                    <a href="#como-ajudar" class="nav-link">Como Ajudar</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                    <button class="btn btn-primary" onclick="scrollToSection('como-ajudar')">
+                        Fazer Doação
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="menu-toggle" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon" style="display: none;"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobile-nav">
+                <a href="#sobre" class="nav-link-mobile" onclick="closeMobileMenu()">Sobre Nós</a>
+                <a href="#historia" class="nav-link-mobile" onclick="closeMobileMenu()">Nossa História</a>
+                <a href="#como-ajudar" class="nav-link-mobile" onclick="closeMobileMenu()">Como Ajudar</a>
+                <a href="#contato" class="nav-link-mobile" onclick="closeMobileMenu()">Contato</a>
+                <button class="btn btn-primary" onclick="scrollToSection('como-ajudar'); closeMobileMenu();">
+                    Fazer Doação
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Cuidando com <span class="text-primary">amor</span> e <span class="text-primary">dignidade</span>
+                        </h1>
+                        <p class="hero-description">
+                            Há mais de um século, o Asilo de Mendigos de Pelotas oferece acolhimento, 
+                            cuidado e dignidade para pessoas em situação de vulnerabilidade social. 
+                            Sua ajuda faz a diferença na vida de quem mais precisa.
+                        </p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg" onclick="scrollToSection('como-ajudar')">
+                                Fazer uma Doação
+                            </button>
+                            <button class="btn btn-outline btn-lg" onclick="scrollToSection('sobre')">
+                                Conheça Nossa História
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1751977979590-3554dd691c5e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwY2FyZSUyMGNvbW11bml0eSUyMGhlbHBpbmd8ZW58MXx8fHwxNzU3MzYwNjczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Cuidado com idosos na comunidade" 
+                             class="hero-img">
+                        <div class="hero-stat">
+                            <p class="stat-number">+100</p>
+                            <p class="stat-text">Anos de dedicação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre Nossa Instituição</h2>
+                    <p class="section-description">
+                        O Asilo de Mendigos de Pelotas é uma instituição filantrópica dedicada ao 
+                        acolhimento e cuidado de pessoas em situação de vulnerabilidade social, 
+                        oferecendo muito mais que abrigo: oferecemos um lar.
+                    </p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Nossa Missão</h3>
+                        <p>
+                            Promover o bem-estar, a dignidade e a qualidade de vida de pessoas em 
+                            situação de vulnerabilidade social, oferecendo acolhimento, cuidados 
+                            especializados e um ambiente de respeito mútuo.
+                        </p>
+                        <h3>Nossa Visão</h3>
+                        <p>
+                            Ser reconhecida como referência em cuidado humanizado e inclusão social, 
+                            contribuindo para uma sociedade mais justa e solidária, onde cada pessoa 
+                            tenha acesso à dignidade e aos cuidados necessários.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1562709911-a355229de124?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFyaXR5JTIwdm9sdW50ZWVycyUyMGhlbHBpbmclMjBlbGRlcmx5fGVufDF8fHx8MTc1NzM2MDY3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Voluntários ajudando idosos" 
+                             class="about-img">
+                    </div>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <h4>Amor e Compaixão</h4>
+                        <p>Cada pessoa é tratada com carinho, respeito e dignidade humana.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h4>Comunidade</h4>
+                        <p>Criamos um ambiente de convivência familiar e acolhedora.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="home"></i>
+                        </div>
+                        <h4>Lar Seguro</h4>
+                        <p>Oferecemos um espaço seguro e confortável para todos os residentes.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i data-lucide="shield"></i>
+                        </div>
+                        <h4>Proteção</h4>
+                        <p>Garantimos cuidados médicos, alimentação e bem-estar integral.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="historia" class="history">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nossa História</h2>
+                    <p class="section-description">
+                        Mais de um século de dedicação ao cuidado e acolhimento de pessoas 
+                        em situação de vulnerabilidade social em Pelotas e região.
+                    </p>
+                </div>
+
+                <div class="history-content">
+                    <div class="history-image">
+                        <img src="https://images.unsplash.com/photo-1750131164894-a363d0bc4af6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaXN0b3JpYyUyMGJ1aWxkaW5nJTIwaW5zdGl0dXRpb258ZW58MXx8fHwxNzU3MzYwNjc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" 
+                             alt="Edifício histórico da instituição" 
+                             class="history-img">
+                    </div>
+                    <div class="history-text">
+                        <h3>Uma Tradição de Cuidado</h3>
+                        <p>
+                            Fundado no início do século XX, o Asilo de Mendigos de Pelotas nasceu 
+                            do sonho de um grupo de pessoas comprometidas com a justiça social e 
+                            o bem-estar dos mais necessitados.
+                        </p>
+                        <p>
+                            Ao longo dos anos, nossa instituição evoluiu constantemente, sempre 
+                            mantendo o foco no cuidado humanizado e na dignidade de cada pessoa 
+                            acolhida. Hoje, somos reconhecidos como uma das principais instituições 
+                            de assistência social da região sul do Brasil.
+                        </p>
+                        <div class="legacy-box">
+                            <p class="legacy-title">Nosso Legado</p>
+                            <p class="legacy-text">
+                                Milhares de vidas transformadas, centenas de famílias reunidas e 
+                                uma comunidade mais solidária e acolhedora.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="milestones">
+                    <h3>Marcos Históricos</h3>
+                    <div class="milestones-grid">
+                        <div class="milestone-card">
+                            <div class="milestone-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <div class="milestone-year">
+                                    <i data-lucide="calendar"></i>
+                                    <span>1920</span>
+                                </div>
+                                <h4>Fundação da Instituição</h4>
+                                <p>Criação do Asilo de Mendigos de Pelotas por um grupo de filantropas locais, com o objetivo de acolher pessoas em situação de rua.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">
+                                <i data-lucide="users-2"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <div class="milestone-year">
+                                    <i data-lucide="calendar"></i>
+                                    <span>1950</span>
+                                </div>
+                                <h4>Expansão das Instalações</h4>
+                                <p>Ampliação do prédio principal e construção de novas alas para melhor acomodar os residentes e oferecer mais conforto.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <div class="milestone-year">
+                                    <i data-lucide="calendar"></i>
+                                    <span>1980</span>
+                                </div>
+                                <h4>Modernização dos Cuidados</h4>
+                                <p>Implementação de novos protocolos de saúde e contratação de profissionais especializados em geriatria e assistência social.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-card">
+                            <div class="milestone-icon">
+                                <i data-lucide="award"></i>
+                            </div>
+                            <div class="milestone-content">
+                                <div class="milestone-year">
+                                    <i data-lucide="calendar"></i>
+                                    <span>2000</span>
+                                </div>
+                                <h4>Certificações e Reconhecimentos</h4>
+                                <p>Obtenção de certificações importantes e reconhecimento municipal como instituição de utilidade pública.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Help Section -->
+        <section id="como-ajudar" class="how-to-help">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Como Você Pode Ajudar</h2>
+                    <p class="section-description">
+                        Existem várias formas de contribuir com nossa missão. Cada gesto de 
+                        solidariedade, por menor que seja, faz uma diferença significativa 
+                        na vida dos nossos residentes.
+                    </p>
+                </div>
+
+                <div class="help-ways">
+                    <div class="help-card highlight">
+                        <div class="help-icon primary">
+                            <i data-lucide="banknote"></i>
+                        </div>
+                        <h4>Doação em Dinheiro</h4>
+                        <p>Contribua financeiramente para manutenção da instituição, compra de medicamentos e melhorias nas instalações.</p>
+                        <button class="btn btn-primary">Fazer Doação</button>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i data-lucide="package"></i>
+                        </div>
+                        <h4>Doação de Materiais</h4>
+                        <p>Alimentos não perecíveis, produtos de higiene, roupas, cobertores e materiais de limpeza são sempre bem-vindos.</p>
+                        <button class="btn btn-outline">Saber Como Doar</button>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h4>Trabalho Voluntário</h4>
+                        <p>Dedique algumas horas do seu tempo para atividades recreativas, cuidados básicos ou apoio administrativo.</p>
+                        <button class="btn btn-outline">Ser Voluntário</button>
+                    </div>
+                    <div class="help-card">
+                        <div class="help-icon">
+                            <i data-lucide="heart"></i>
+                        </div>
+                        <h4>Apadrinhamento</h4>
+                        <p>Apadrinhe um residente e acompanhe de perto sua jornada, oferecendo apoio personalizado e contínuo.</p>
+                        <button class="btn btn-outline">Apadrinhar</button>
+                    </div>
+                </div>
+
+                <div class="donation-cta">
+                    <h3>Sua Doação Transforma Vidas</h3>
+                    <p>
+                        Com sua contribuição, podemos continuar oferecendo cuidados de qualidade, 
+                        alimentação nutritiva, medicamentos necessários e um ambiente acolhedor 
+                        para todos os nossos residentes.
+                    </p>
+                    <div class="donation-info">
+                        <button class="btn btn-primary btn-lg">Fazer Doação Online</button>
+                        <div class="payment-info">
+                            <p>PIX: asilo@pelotasorg.br</p>
+                            <p>Conta: Banco do Brasil - Ag: 1234-5 | CC: 67890-1</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Entre em Contato</h2>
+                    <p class="section-description">
+                        Estamos sempre prontos para receber você. Entre em contato conosco 
+                        para saber como pode ajudar, esclarecer dúvidas ou agendar uma visita.
+                    </p>
+                </div>
+
+                <div class="contact-content">
+                    <!-- Contact Form -->
+                    <div class="contact-form-card">
+                        <h3>Envie sua Mensagem</h3>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nome Completo *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Telefone</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(53) 99999-9999">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Assunto *</label>
+                                    <input type="text" id="subject" name="subject" required placeholder="Como posso ajudar?">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem *</label>
+                                <textarea id="message" name="message" required placeholder="Conte-nos como gostaria de contribuir ou suas dúvidas..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Endereço</h4>
+                                <p>Rua dos Cuidados, 123<br>Centro - Pelotas/RS<br>CEP: 96010-000</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Telefones</h4>
+                                <p>(53) 3222-1234<br>(53) 99999-5678</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>E-mail</h4>
+                                <p>contato@asilomendigos.org.br<br>voluntarios@asilomendigos.org.br</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i data-lucide="clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Horário de Funcionamento</h4>
+                                <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h<br>Domingo: Fechado para visitas</p>
+                            </div>
+                        </div>
+                        <div class="info-card emergency">
+                            <div class="info-content">
+                                <h4>Emergências</h4>
+                                <p>Para situações urgentes relacionadas aos nossos residentes, entre em contato através do telefone (53) 99999-0000, disponível 24 horas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i data-lucide="heart"></i>
+                        <div>
+                            <h3>Asilo de Mendigos</h3>
+                            <p>Pelotas</p>
+                        </div>
+                    </div>
+                    <p>Mais de um século dedicados ao cuidado e acolhimento de pessoas em situação de vulnerabilidade social.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="instagram"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="mail"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#historia">Nossa História</a></li>
+                        <li><a href="#como-ajudar">Como Ajudar</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Como Ajudar</h4>
+                    <ul class="footer-links">
+                        <li>Doações em Dinheiro</li>
+                        <li>Materiais e Alimentos</li>
+                        <li>Trabalho Voluntário</li>
+                        <li>Apadrinhamento</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-quick">
+                        <p>Rua dos Cuidados, 123</p>
+                        <p>Centro - Pelotas/RS</p>
+                        <p>(53) 3222-1234</p>
+                        <p>contato@asilomendigos.org.br</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Asilo de Mendigos de Pelotas. Todos os direitos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
