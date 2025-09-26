@@ -292,7 +292,31 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 });
 
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Rola suavemente
+    });
+}
+
+function scrollFunction() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop);
+
+window.onscroll = function() {
+    scrollFunction();
+};
+
 // Initialize all functionality when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Asilo de Mendigos de Pelotas - Website carregado com sucesso!');
+    console.log('Asilo de Idosos de Pelotas - Website carregado com sucesso!');
 });

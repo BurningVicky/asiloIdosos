@@ -1,11 +1,2 @@
 
-  # Landing Page for Philanthropic Institution
-
-  This is a code bundle for Landing Page for Philanthropic Institution. The original project is available at https://www.figma.com/design/YlsWQ33oiXkZBtgHziUeBv/Landing-Page-for-Philanthropic-Institution.
-
-  ## Running the code
-
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
-  
+  # Landing Page para o Asilo de Idosos - Pelotas
