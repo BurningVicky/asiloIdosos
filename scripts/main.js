@@ -92,7 +92,7 @@ function initContactForm() {
     }
 }
 
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
     const formData = new FormData(e.target);
@@ -116,16 +116,30 @@ function handleFormSubmit(e) {
         return;
     }
     
-    // Simulate form submission
+    // Show loading
     showLoading(true);
-    
-    setTimeout(() => {
+
+    try {
+        const response = await fetch("https://formspree.io/f/xldpgrde", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json"
+            },
+            body: formData
+        });
+
         showLoading(false);
-        showToast('Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.', 'success');
-        
-        // Reset form
-        e.target.reset();
-    }, 2000);
+
+        if (response.ok) {
+            showToast('Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.', 'success');
+            e.target.reset();
+        } else {
+            showToast('Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.', 'error');
+        }
+    } catch (error) {
+        showLoading(false);
+        showToast('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
+    }
 }
 
 function isValidEmail(email) {
@@ -135,12 +149,14 @@ function isValidEmail(email) {
 
 function showLoading(show) {
     const submitButton = document.querySelector('#contact-form button[type="submit"]');
-    if (show) {
-        submitButton.disabled = true;
-        submitButton.innerHTML = 'Enviando...';
-    } else {
-        submitButton.disabled = false;
-        submitButton.innerHTML = 'Enviar Mensagem';
+    if (submitButton) {
+        if (show) {
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Enviando...';
+        } else {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Enviar Mensagem';
+        }
     }
 }
 
