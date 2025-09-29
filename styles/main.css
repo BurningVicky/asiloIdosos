@@ -1082,3 +1082,13 @@ html {
     height: auto;
     display: block; /* Remove espaços extras */
 }
+
+#phone {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
+}
+
+#phone::placeholder{
+    font-family: inherit;
+    letter-spacing: normal;
+}

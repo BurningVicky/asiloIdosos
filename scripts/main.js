@@ -89,6 +89,48 @@ function initContactForm() {
     const form = document.getElementById('contact-form');
     if (form) {
         form.addEventListener('submit', handleFormSubmit);
+
+        // Inicia máscara do telefone
+        initPhoneMask();
+    }
+}
+
+// Máscara do telefone
+function initPhoneMask(){
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput){
+        phoneInput.addEventListener('input', function(e){
+            const value = e.target.value.replace(/\D/g, '');
+            const formattedValue = formatPhone(value);
+            e.target.value = formattedValue;
+        });
+
+        phoneInput.addEventListener('blur', function(e){
+            const value = e.target.value.replace(/\D/g, '');
+            if (value.length === 0){
+                e.target.value = '';
+            }
+        });
+    }
+}
+
+function formatPhone(value){
+
+    // Remove tudo que não é número
+    const numbers = value.replace(/\D/g, '');
+
+    // Limita a 11 dígitos
+    const limitedNumbers = numbers.substring(0, 11);
+
+    // Aplica máscara (xx) xxxx-xxxx
+    if (limitedNumbers.length <= 2){
+        return limitedNumbers;
+    } else if (limitedNumbers.length <= 6){
+        return `(${limitedNumbers.substring(0,2)}) ${limitedNumbers.substring(2)}`;
+    } else if (limitedNumbers.length <= 10) {
+        return `(${limitedNumbers.substring(0, 2)}) ${limitedNumbers.substring(2, 6)}-${limitedNumbers.substring(6)}`;
+    } else {
+        return `(${limitedNumbers.substring(0, 2)}) ${limitedNumbers.substring(2, 7)}-${limitedNumbers.substring(7, 11)}`;
     }
 }
 
@@ -113,6 +155,12 @@ async function handleFormSubmit(e) {
     // Validate email format
     if (!isValidEmail(data.email)) {
         showToast('Por favor, insira um e-mail válido.', 'error');
+        return;
+    }
+
+    // Validate phone format if provided
+    if (data.phone && data.phone.trim() !== '' && !isValidPhone(data.phone)){
+        showToast('Por favor, insira um número de telefone válido.', 'error');
         return;
     }
     
@@ -145,6 +193,12 @@ async function handleFormSubmit(e) {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Validação simples de telefone
+function isValidPhone(phone){
+    const numbers = phone.replace(/\D/g, '');
+    return numbers.length >= 10 && numbers.length === 11;
 }
 
 function showLoading(show) {
